@@ -1,0 +1,2135 @@
+{
+  "schema_version": 1,
+  "model": "openai-community/gpt2",
+  "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+  "seed": 42,
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 1,
+  "fraction": 0.2,
+  "random_trials": 10,
+  "intervention": "zero token embeddings; preserve positions and attention mask",
+  "gradient_objective": "fixed target log probability",
+  "load_seconds": 12.104643041966483,
+  "environment": {
+    "python": "3.13.12",
+    "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+    "torch": "2.8.0",
+    "transformers": "4.56.2",
+    "tokenizers": "0.22.2"
+  },
+  "examples": [
+    {
+      "prompt": "The capital of France is",
+      "input_ids": [
+        464,
+        3139,
+        286,
+        4881,
+        318
+      ],
+      "tokens": [
+        "The",
+        " capital",
+        " of",
+        " France",
+        " is"
+      ],
+      "target_id": 262,
+      "target_text": " the",
+      "clean": {
+        "logit": -100.24979400634766,
+        "log_probability": -2.46992564201355,
+        "probability": 0.08459114879520953,
+        "argmax_id": 262
+      },
+      "scores": {
+        "attention": [
+          0.6502164006233215,
+          0.07861942052841187,
+          0.07464151829481125,
+          0.09340251982212067,
+          0.1031201034784317
+        ],
+        "gradient_l2": [
+          1.6727018356323242,
+          1.0281394720077515,
+          2.0623230934143066,
+          0.7136578559875488,
+          2.748281717300415
+        ],
+        "gradient_x_input_abs": [
+          0.6306290626525879,
+          0.3750743567943573,
+          1.227340579032898,
+          0.2719780206680298,
+          1.0686225891113281
+        ]
+      },
+      "ablations": [
+        {
+          "method": "attention",
+          "strategy": "top",
+          "trial": 0,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -115.47821807861328,
+          "log_probability": -2.91888427734375,
+          "probability": 0.05399389591902627,
+          "argmax_id": 262,
+          "logit_drop": 15.228424072265625,
+          "log_probability_drop": 0.4489586353302002,
+          "probability_drop": 0.030597252876183256,
+          "prediction_changed": false
+        },
+        {
+          "method": "attention",
+          "strategy": "bottom",
+          "trial": 0,
+          "positions": [
+            2
+          ],
+          "count": 1,
+          "logit": -107.5549545288086,
+          "log_probability": -1.9696632623672485,
+          "probability": 0.1395038244942335,
+          "argmax_id": 262,
+          "logit_drop": 7.3051605224609375,
+          "log_probability_drop": -0.5002623796463013,
+          "probability_drop": -0.054912675699023986,
+          "prediction_changed": false
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 0,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -115.47821807861328,
+          "log_probability": -2.91888427734375,
+          "probability": 0.05399389591902627,
+          "argmax_id": 262,
+          "logit_drop": 15.228424072265625,
+          "log_probability_drop": 0.4489586353302002,
+          "probability_drop": 0.030597252876183256,
+          "prediction_changed": false
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 1,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -115.47821807861328,
+          "log_probability": -2.91888427734375,
+          "probability": 0.05399389591902627,
+          "argmax_id": 262,
+          "logit_drop": 15.228424072265625,
+          "log_probability_drop": 0.4489586353302002,
+          "probability_drop": 0.030597252876183256,
+          "prediction_changed": false
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 2,
+          "positions": [
+            3
+          ],
+          "count": 1,
+          "logit": -97.94377899169922,
+          "log_probability": -1.4236810207366943,
+          "probability": 0.24082589818301767,
+          "argmax_id": 262,
+          "logit_drop": -2.3060150146484375,
+          "log_probability_drop": -1.0462446212768555,
+          "probability_drop": -0.15623474938780813,
+          "prediction_changed": false
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 3,
+          "positions": [
+            2
+          ],
+          "count": 1,
+          "logit": -107.5549545288086,
+          "log_probability": -1.9696632623672485,
+          "probability": 0.1395038244942335,
+          "argmax_id": 262,
+          "logit_drop": 7.3051605224609375,
+          "log_probability_drop": -0.5002623796463013,
+          "probability_drop": -0.054912675699023986,
+          "prediction_changed": false
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 4,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -115.47821807861328,
+          "log_probability": -2.91888427734375,
+          "probability": 0.05399389591902627,
+          "argmax_id": 262,
+          "logit_drop": 15.228424072265625,
+          "log_probability_drop": 0.4489586353302002,
+          "probability_drop": 0.030597252876183256,
+          "prediction_changed": false
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 5,
+          "positions": [
+            2
+          ],
+          "count": 1,
+          "logit": -107.5549545288086,
+          "log_probability": -1.9696632623672485,
+          "probability": 0.1395038244942335,
+          "argmax_id": 262,
+          "logit_drop": 7.3051605224609375,
+          "log_probability_drop": -0.5002623796463013,
+          "probability_drop": -0.054912675699023986,
+          "prediction_changed": false
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 6,
+          "positions": [
+            4
+          ],
+          "count": 1,
+          "logit": -97.82150268554688,
+          "log_probability": -2.2650413513183594,
+          "probability": 0.10382574112075328,
+          "argmax_id": 262,
+          "logit_drop": -2.4282913208007812,
+          "log_probability_drop": -0.20488429069519043,
+          "probability_drop": -0.019234592325543753,
+          "prediction_changed": false
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 7,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -115.47821807861328,
+          "log_probability": -2.91888427734375,
+          "probability": 0.05399389591902627,
+          "argmax_id": 262,
+          "logit_drop": 15.228424072265625,
+          "log_probability_drop": 0.4489586353302002,
+          "probability_drop": 0.030597252876183256,
+          "prediction_changed": false
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 8,
+          "positions": [
+            3
+          ],
+          "count": 1,
+          "logit": -97.94377899169922,
+          "log_probability": -1.4236810207366943,
+          "probability": 0.24082589818301767,
+          "argmax_id": 262,
+          "logit_drop": -2.3060150146484375,
+          "log_probability_drop": -1.0462446212768555,
+          "probability_drop": -0.15623474938780813,
+          "prediction_changed": false
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 9,
+          "positions": [
+            1
+          ],
+          "count": 1,
+          "logit": -109.39310455322266,
+          "log_probability": -1.7723904848098755,
+          "probability": 0.16992629669235215,
+          "argmax_id": 257,
+          "logit_drop": 9.143310546875,
+          "log_probability_drop": -0.6975351572036743,
+          "probability_drop": -0.08533514789714262,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "top",
+          "trial": 0,
+          "positions": [
+            4
+          ],
+          "count": 1,
+          "logit": -97.82150268554688,
+          "log_probability": -2.2650413513183594,
+          "probability": 0.10382574112075328,
+          "argmax_id": 262,
+          "logit_drop": -2.4282913208007812,
+          "log_probability_drop": -0.20488429069519043,
+          "probability_drop": -0.019234592325543753,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "bottom",
+          "trial": 0,
+          "positions": [
+            3
+          ],
+          "count": 1,
+          "logit": -97.94377899169922,
+          "log_probability": -1.4236810207366943,
+          "probability": 0.24082589818301767,
+          "argmax_id": 262,
+          "logit_drop": -2.3060150146484375,
+          "log_probability_drop": -1.0462446212768555,
+          "probability_drop": -0.15623474938780813,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 0,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -115.47821807861328,
+          "log_probability": -2.91888427734375,
+          "probability": 0.05399389591902627,
+          "argmax_id": 262,
+          "logit_drop": 15.228424072265625,
+          "log_probability_drop": 0.4489586353302002,
+          "probability_drop": 0.030597252876183256,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 1,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -115.47821807861328,
+          "log_probability": -2.91888427734375,
+          "probability": 0.05399389591902627,
+          "argmax_id": 262,
+          "logit_drop": 15.228424072265625,
+          "log_probability_drop": 0.4489586353302002,
+          "probability_drop": 0.030597252876183256,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 2,
+          "positions": [
+            3
+          ],
+          "count": 1,
+          "logit": -97.94377899169922,
+          "log_probability": -1.4236810207366943,
+          "probability": 0.24082589818301767,
+          "argmax_id": 262,
+          "logit_drop": -2.3060150146484375,
+          "log_probability_drop": -1.0462446212768555,
+          "probability_drop": -0.15623474938780813,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 3,
+          "positions": [
+            2
+          ],
+          "count": 1,
+          "logit": -107.5549545288086,
+          "log_probability": -1.9696632623672485,
+          "probability": 0.1395038244942335,
+          "argmax_id": 262,
+          "logit_drop": 7.3051605224609375,
+          "log_probability_drop": -0.5002623796463013,
+          "probability_drop": -0.054912675699023986,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 4,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -115.47821807861328,
+          "log_probability": -2.91888427734375,
+          "probability": 0.05399389591902627,
+          "argmax_id": 262,
+          "logit_drop": 15.228424072265625,
+          "log_probability_drop": 0.4489586353302002,
+          "probability_drop": 0.030597252876183256,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 5,
+          "positions": [
+            2
+          ],
+          "count": 1,
+          "logit": -107.5549545288086,
+          "log_probability": -1.9696632623672485,
+          "probability": 0.1395038244942335,
+          "argmax_id": 262,
+          "logit_drop": 7.3051605224609375,
+          "log_probability_drop": -0.5002623796463013,
+          "probability_drop": -0.054912675699023986,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 6,
+          "positions": [
+            4
+          ],
+          "count": 1,
+          "logit": -97.82150268554688,
+          "log_probability": -2.2650413513183594,
+          "probability": 0.10382574112075328,
+          "argmax_id": 262,
+          "logit_drop": -2.4282913208007812,
+          "log_probability_drop": -0.20488429069519043,
+          "probability_drop": -0.019234592325543753,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 7,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -115.47821807861328,
+          "log_probability": -2.91888427734375,
+          "probability": 0.05399389591902627,
+          "argmax_id": 262,
+          "logit_drop": 15.228424072265625,
+          "log_probability_drop": 0.4489586353302002,
+          "probability_drop": 0.030597252876183256,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 8,
+          "positions": [
+            3
+          ],
+          "count": 1,
+          "logit": -97.94377899169922,
+          "log_probability": -1.4236810207366943,
+          "probability": 0.24082589818301767,
+          "argmax_id": 262,
+          "logit_drop": -2.3060150146484375,
+          "log_probability_drop": -1.0462446212768555,
+          "probability_drop": -0.15623474938780813,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 9,
+          "positions": [
+            1
+          ],
+          "count": 1,
+          "logit": -109.39310455322266,
+          "log_probability": -1.7723904848098755,
+          "probability": 0.16992629669235215,
+          "argmax_id": 257,
+          "logit_drop": 9.143310546875,
+          "log_probability_drop": -0.6975351572036743,
+          "probability_drop": -0.08533514789714262,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "top",
+          "trial": 0,
+          "positions": [
+            2
+          ],
+          "count": 1,
+          "logit": -107.5549545288086,
+          "log_probability": -1.9696632623672485,
+          "probability": 0.1395038244942335,
+          "argmax_id": 262,
+          "logit_drop": 7.3051605224609375,
+          "log_probability_drop": -0.5002623796463013,
+          "probability_drop": -0.054912675699023986,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "bottom",
+          "trial": 0,
+          "positions": [
+            3
+          ],
+          "count": 1,
+          "logit": -97.94377899169922,
+          "log_probability": -1.4236810207366943,
+          "probability": 0.24082589818301767,
+          "argmax_id": 262,
+          "logit_drop": -2.3060150146484375,
+          "log_probability_drop": -1.0462446212768555,
+          "probability_drop": -0.15623474938780813,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 0,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -115.47821807861328,
+          "log_probability": -2.91888427734375,
+          "probability": 0.05399389591902627,
+          "argmax_id": 262,
+          "logit_drop": 15.228424072265625,
+          "log_probability_drop": 0.4489586353302002,
+          "probability_drop": 0.030597252876183256,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 1,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -115.47821807861328,
+          "log_probability": -2.91888427734375,
+          "probability": 0.05399389591902627,
+          "argmax_id": 262,
+          "logit_drop": 15.228424072265625,
+          "log_probability_drop": 0.4489586353302002,
+          "probability_drop": 0.030597252876183256,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 2,
+          "positions": [
+            3
+          ],
+          "count": 1,
+          "logit": -97.94377899169922,
+          "log_probability": -1.4236810207366943,
+          "probability": 0.24082589818301767,
+          "argmax_id": 262,
+          "logit_drop": -2.3060150146484375,
+          "log_probability_drop": -1.0462446212768555,
+          "probability_drop": -0.15623474938780813,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 3,
+          "positions": [
+            2
+          ],
+          "count": 1,
+          "logit": -107.5549545288086,
+          "log_probability": -1.9696632623672485,
+          "probability": 0.1395038244942335,
+          "argmax_id": 262,
+          "logit_drop": 7.3051605224609375,
+          "log_probability_drop": -0.5002623796463013,
+          "probability_drop": -0.054912675699023986,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 4,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -115.47821807861328,
+          "log_probability": -2.91888427734375,
+          "probability": 0.05399389591902627,
+          "argmax_id": 262,
+          "logit_drop": 15.228424072265625,
+          "log_probability_drop": 0.4489586353302002,
+          "probability_drop": 0.030597252876183256,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 5,
+          "positions": [
+            2
+          ],
+          "count": 1,
+          "logit": -107.5549545288086,
+          "log_probability": -1.9696632623672485,
+          "probability": 0.1395038244942335,
+          "argmax_id": 262,
+          "logit_drop": 7.3051605224609375,
+          "log_probability_drop": -0.5002623796463013,
+          "probability_drop": -0.054912675699023986,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 6,
+          "positions": [
+            4
+          ],
+          "count": 1,
+          "logit": -97.82150268554688,
+          "log_probability": -2.2650413513183594,
+          "probability": 0.10382574112075328,
+          "argmax_id": 262,
+          "logit_drop": -2.4282913208007812,
+          "log_probability_drop": -0.20488429069519043,
+          "probability_drop": -0.019234592325543753,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 7,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -115.47821807861328,
+          "log_probability": -2.91888427734375,
+          "probability": 0.05399389591902627,
+          "argmax_id": 262,
+          "logit_drop": 15.228424072265625,
+          "log_probability_drop": 0.4489586353302002,
+          "probability_drop": 0.030597252876183256,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 8,
+          "positions": [
+            3
+          ],
+          "count": 1,
+          "logit": -97.94377899169922,
+          "log_probability": -1.4236810207366943,
+          "probability": 0.24082589818301767,
+          "argmax_id": 262,
+          "logit_drop": -2.3060150146484375,
+          "log_probability_drop": -1.0462446212768555,
+          "probability_drop": -0.15623474938780813,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 9,
+          "positions": [
+            1
+          ],
+          "count": 1,
+          "logit": -109.39310455322266,
+          "log_probability": -1.7723904848098755,
+          "probability": 0.16992629669235215,
+          "argmax_id": 257,
+          "logit_drop": 9.143310546875,
+          "log_probability_drop": -0.6975351572036743,
+          "probability_drop": -0.08533514789714262,
+          "prediction_changed": true
+        }
+      ],
+      "timings": {
+        "forward_attention_seconds": 0.6955229589948431,
+        "gradient_seconds": 0.2845844170078635,
+        "ablation_seconds": 0.70664570806548
+      }
+    },
+    {
+      "prompt": "The opposite of hot is",
+      "input_ids": [
+        464,
+        6697,
+        286,
+        3024,
+        318
+      ],
+      "tokens": [
+        "The",
+        " opposite",
+        " of",
+        " hot",
+        " is"
+      ],
+      "target_id": 4692,
+      "target_text": " cold",
+      "clean": {
+        "logit": -69.63800048828125,
+        "log_probability": -1.8156366348266602,
+        "probability": 0.1627342730990334,
+        "argmax_id": 4692
+      },
+      "scores": {
+        "attention": [
+          0.5958383083343506,
+          0.06126447394490242,
+          0.09396542608737946,
+          0.13629615306854248,
+          0.11263569444417953
+        ],
+        "gradient_l2": [
+          1.4392147064208984,
+          1.5606896877288818,
+          1.046364426612854,
+          2.1023550033569336,
+          1.0193732976913452
+        ],
+        "gradient_x_input_abs": [
+          0.09364958107471466,
+          0.0658205971121788,
+          0.3439505994319916,
+          0.6753718852996826,
+          0.20668819546699524
+        ]
+      },
+      "ablations": [
+        {
+          "method": "attention",
+          "strategy": "top",
+          "trial": 0,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -85.02252960205078,
+          "log_probability": -4.74023962020874,
+          "probability": 0.008736552480107298,
+          "argmax_id": 262,
+          "logit_drop": 15.384529113769531,
+          "log_probability_drop": 2.92460298538208,
+          "probability_drop": 0.1539977206189261,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "bottom",
+          "trial": 0,
+          "positions": [
+            1
+          ],
+          "count": 1,
+          "logit": -97.52291107177734,
+          "log_probability": -5.850391864776611,
+          "probability": 0.002878770848134897,
+          "argmax_id": 262,
+          "logit_drop": 27.884910583496094,
+          "log_probability_drop": 4.034755229949951,
+          "probability_drop": 0.1598555022508985,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 0,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -85.02252960205078,
+          "log_probability": -4.74023962020874,
+          "probability": 0.008736552480107298,
+          "argmax_id": 262,
+          "logit_drop": 15.384529113769531,
+          "log_probability_drop": 2.92460298538208,
+          "probability_drop": 0.1539977206189261,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 1,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -85.02252960205078,
+          "log_probability": -4.74023962020874,
+          "probability": 0.008736552480107298,
+          "argmax_id": 262,
+          "logit_drop": 15.384529113769531,
+          "log_probability_drop": 2.92460298538208,
+          "probability_drop": 0.1539977206189261,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 2,
+          "positions": [
+            3
+          ],
+          "count": 1,
+          "logit": -93.22753143310547,
+          "log_probability": -10.348723411560059,
+          "probability": 3.203365748335109e-05,
+          "argmax_id": 262,
+          "logit_drop": 23.58953094482422,
+          "log_probability_drop": 8.533086776733398,
+          "probability_drop": 0.16270223944155005,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 3,
+          "positions": [
+            2
+          ],
+          "count": 1,
+          "logit": -95.40473937988281,
+          "log_probability": -5.807480335235596,
+          "probability": 0.0030049921141672552,
+          "argmax_id": 262,
+          "logit_drop": 25.766738891601562,
+          "log_probability_drop": 3.9918437004089355,
+          "probability_drop": 0.15972928098486616,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 4,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -85.02252960205078,
+          "log_probability": -4.74023962020874,
+          "probability": 0.008736552480107298,
+          "argmax_id": 262,
+          "logit_drop": 15.384529113769531,
+          "log_probability_drop": 2.92460298538208,
+          "probability_drop": 0.1539977206189261,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 5,
+          "positions": [
+            2
+          ],
+          "count": 1,
+          "logit": -95.40473937988281,
+          "log_probability": -5.807480335235596,
+          "probability": 0.0030049921141672552,
+          "argmax_id": 262,
+          "logit_drop": 25.766738891601562,
+          "log_probability_drop": 3.9918437004089355,
+          "probability_drop": 0.15972928098486616,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 6,
+          "positions": [
+            4
+          ],
+          "count": 1,
+          "logit": -95.38721466064453,
+          "log_probability": -5.799856185913086,
+          "probability": 0.003027990181707292,
+          "argmax_id": 11,
+          "logit_drop": 25.74921417236328,
+          "log_probability_drop": 3.984219551086426,
+          "probability_drop": 0.1597062829173261,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 7,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -85.02252960205078,
+          "log_probability": -4.74023962020874,
+          "probability": 0.008736552480107298,
+          "argmax_id": 262,
+          "logit_drop": 15.384529113769531,
+          "log_probability_drop": 2.92460298538208,
+          "probability_drop": 0.1539977206189261,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 8,
+          "positions": [
+            3
+          ],
+          "count": 1,
+          "logit": -93.22753143310547,
+          "log_probability": -10.348723411560059,
+          "probability": 3.203365748335109e-05,
+          "argmax_id": 262,
+          "logit_drop": 23.58953094482422,
+          "log_probability_drop": 8.533086776733398,
+          "probability_drop": 0.16270223944155005,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 9,
+          "positions": [
+            1
+          ],
+          "count": 1,
+          "logit": -97.52291107177734,
+          "log_probability": -5.850391864776611,
+          "probability": 0.002878770848134897,
+          "argmax_id": 262,
+          "logit_drop": 27.884910583496094,
+          "log_probability_drop": 4.034755229949951,
+          "probability_drop": 0.1598555022508985,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "top",
+          "trial": 0,
+          "positions": [
+            3
+          ],
+          "count": 1,
+          "logit": -93.22753143310547,
+          "log_probability": -10.348723411560059,
+          "probability": 3.203365748335109e-05,
+          "argmax_id": 262,
+          "logit_drop": 23.58953094482422,
+          "log_probability_drop": 8.533086776733398,
+          "probability_drop": 0.16270223944155005,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "bottom",
+          "trial": 0,
+          "positions": [
+            4
+          ],
+          "count": 1,
+          "logit": -95.38721466064453,
+          "log_probability": -5.799856185913086,
+          "probability": 0.003027990181707292,
+          "argmax_id": 11,
+          "logit_drop": 25.74921417236328,
+          "log_probability_drop": 3.984219551086426,
+          "probability_drop": 0.1597062829173261,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 0,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -85.02252960205078,
+          "log_probability": -4.74023962020874,
+          "probability": 0.008736552480107298,
+          "argmax_id": 262,
+          "logit_drop": 15.384529113769531,
+          "log_probability_drop": 2.92460298538208,
+          "probability_drop": 0.1539977206189261,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 1,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -85.02252960205078,
+          "log_probability": -4.74023962020874,
+          "probability": 0.008736552480107298,
+          "argmax_id": 262,
+          "logit_drop": 15.384529113769531,
+          "log_probability_drop": 2.92460298538208,
+          "probability_drop": 0.1539977206189261,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 2,
+          "positions": [
+            3
+          ],
+          "count": 1,
+          "logit": -93.22753143310547,
+          "log_probability": -10.348723411560059,
+          "probability": 3.203365748335109e-05,
+          "argmax_id": 262,
+          "logit_drop": 23.58953094482422,
+          "log_probability_drop": 8.533086776733398,
+          "probability_drop": 0.16270223944155005,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 3,
+          "positions": [
+            2
+          ],
+          "count": 1,
+          "logit": -95.40473937988281,
+          "log_probability": -5.807480335235596,
+          "probability": 0.0030049921141672552,
+          "argmax_id": 262,
+          "logit_drop": 25.766738891601562,
+          "log_probability_drop": 3.9918437004089355,
+          "probability_drop": 0.15972928098486616,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 4,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -85.02252960205078,
+          "log_probability": -4.74023962020874,
+          "probability": 0.008736552480107298,
+          "argmax_id": 262,
+          "logit_drop": 15.384529113769531,
+          "log_probability_drop": 2.92460298538208,
+          "probability_drop": 0.1539977206189261,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 5,
+          "positions": [
+            2
+          ],
+          "count": 1,
+          "logit": -95.40473937988281,
+          "log_probability": -5.807480335235596,
+          "probability": 0.0030049921141672552,
+          "argmax_id": 262,
+          "logit_drop": 25.766738891601562,
+          "log_probability_drop": 3.9918437004089355,
+          "probability_drop": 0.15972928098486616,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 6,
+          "positions": [
+            4
+          ],
+          "count": 1,
+          "logit": -95.38721466064453,
+          "log_probability": -5.799856185913086,
+          "probability": 0.003027990181707292,
+          "argmax_id": 11,
+          "logit_drop": 25.74921417236328,
+          "log_probability_drop": 3.984219551086426,
+          "probability_drop": 0.1597062829173261,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 7,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -85.02252960205078,
+          "log_probability": -4.74023962020874,
+          "probability": 0.008736552480107298,
+          "argmax_id": 262,
+          "logit_drop": 15.384529113769531,
+          "log_probability_drop": 2.92460298538208,
+          "probability_drop": 0.1539977206189261,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 8,
+          "positions": [
+            3
+          ],
+          "count": 1,
+          "logit": -93.22753143310547,
+          "log_probability": -10.348723411560059,
+          "probability": 3.203365748335109e-05,
+          "argmax_id": 262,
+          "logit_drop": 23.58953094482422,
+          "log_probability_drop": 8.533086776733398,
+          "probability_drop": 0.16270223944155005,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 9,
+          "positions": [
+            1
+          ],
+          "count": 1,
+          "logit": -97.52291107177734,
+          "log_probability": -5.850391864776611,
+          "probability": 0.002878770848134897,
+          "argmax_id": 262,
+          "logit_drop": 27.884910583496094,
+          "log_probability_drop": 4.034755229949951,
+          "probability_drop": 0.1598555022508985,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "top",
+          "trial": 0,
+          "positions": [
+            3
+          ],
+          "count": 1,
+          "logit": -93.22753143310547,
+          "log_probability": -10.348723411560059,
+          "probability": 3.203365748335109e-05,
+          "argmax_id": 262,
+          "logit_drop": 23.58953094482422,
+          "log_probability_drop": 8.533086776733398,
+          "probability_drop": 0.16270223944155005,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "bottom",
+          "trial": 0,
+          "positions": [
+            1
+          ],
+          "count": 1,
+          "logit": -97.52291107177734,
+          "log_probability": -5.850391864776611,
+          "probability": 0.002878770848134897,
+          "argmax_id": 262,
+          "logit_drop": 27.884910583496094,
+          "log_probability_drop": 4.034755229949951,
+          "probability_drop": 0.1598555022508985,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 0,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -85.02252960205078,
+          "log_probability": -4.74023962020874,
+          "probability": 0.008736552480107298,
+          "argmax_id": 262,
+          "logit_drop": 15.384529113769531,
+          "log_probability_drop": 2.92460298538208,
+          "probability_drop": 0.1539977206189261,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 1,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -85.02252960205078,
+          "log_probability": -4.74023962020874,
+          "probability": 0.008736552480107298,
+          "argmax_id": 262,
+          "logit_drop": 15.384529113769531,
+          "log_probability_drop": 2.92460298538208,
+          "probability_drop": 0.1539977206189261,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 2,
+          "positions": [
+            3
+          ],
+          "count": 1,
+          "logit": -93.22753143310547,
+          "log_probability": -10.348723411560059,
+          "probability": 3.203365748335109e-05,
+          "argmax_id": 262,
+          "logit_drop": 23.58953094482422,
+          "log_probability_drop": 8.533086776733398,
+          "probability_drop": 0.16270223944155005,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 3,
+          "positions": [
+            2
+          ],
+          "count": 1,
+          "logit": -95.40473937988281,
+          "log_probability": -5.807480335235596,
+          "probability": 0.0030049921141672552,
+          "argmax_id": 262,
+          "logit_drop": 25.766738891601562,
+          "log_probability_drop": 3.9918437004089355,
+          "probability_drop": 0.15972928098486616,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 4,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -85.02252960205078,
+          "log_probability": -4.74023962020874,
+          "probability": 0.008736552480107298,
+          "argmax_id": 262,
+          "logit_drop": 15.384529113769531,
+          "log_probability_drop": 2.92460298538208,
+          "probability_drop": 0.1539977206189261,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 5,
+          "positions": [
+            2
+          ],
+          "count": 1,
+          "logit": -95.40473937988281,
+          "log_probability": -5.807480335235596,
+          "probability": 0.0030049921141672552,
+          "argmax_id": 262,
+          "logit_drop": 25.766738891601562,
+          "log_probability_drop": 3.9918437004089355,
+          "probability_drop": 0.15972928098486616,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 6,
+          "positions": [
+            4
+          ],
+          "count": 1,
+          "logit": -95.38721466064453,
+          "log_probability": -5.799856185913086,
+          "probability": 0.003027990181707292,
+          "argmax_id": 11,
+          "logit_drop": 25.74921417236328,
+          "log_probability_drop": 3.984219551086426,
+          "probability_drop": 0.1597062829173261,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 7,
+          "positions": [
+            0
+          ],
+          "count": 1,
+          "logit": -85.02252960205078,
+          "log_probability": -4.74023962020874,
+          "probability": 0.008736552480107298,
+          "argmax_id": 262,
+          "logit_drop": 15.384529113769531,
+          "log_probability_drop": 2.92460298538208,
+          "probability_drop": 0.1539977206189261,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 8,
+          "positions": [
+            3
+          ],
+          "count": 1,
+          "logit": -93.22753143310547,
+          "log_probability": -10.348723411560059,
+          "probability": 3.203365748335109e-05,
+          "argmax_id": 262,
+          "logit_drop": 23.58953094482422,
+          "log_probability_drop": 8.533086776733398,
+          "probability_drop": 0.16270223944155005,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 9,
+          "positions": [
+            1
+          ],
+          "count": 1,
+          "logit": -97.52291107177734,
+          "log_probability": -5.850391864776611,
+          "probability": 0.002878770848134897,
+          "argmax_id": 262,
+          "logit_drop": 27.884910583496094,
+          "log_probability_drop": 4.034755229949951,
+          "probability_drop": 0.1598555022508985,
+          "prediction_changed": true
+        }
+      ],
+      "timings": {
+        "forward_attention_seconds": 0.018468750058673322,
+        "gradient_seconds": 0.023931375006213784,
+        "ablation_seconds": 0.6702110830228776
+      }
+    },
+    {
+      "prompt": "The scientist published the results in a",
+      "input_ids": [
+        464,
+        11444,
+        3199,
+        262,
+        2482,
+        287,
+        257
+      ],
+      "tokens": [
+        "The",
+        " scientist",
+        " published",
+        " the",
+        " results",
+        " in",
+        " a"
+      ],
+      "target_id": 3348,
+      "target_text": " paper",
+      "clean": {
+        "logit": -108.89482879638672,
+        "log_probability": -1.1138161420822144,
+        "probability": 0.32830371387942336,
+        "argmax_id": 3348
+      },
+      "scores": {
+        "attention": [
+          0.5966953635215759,
+          0.04252287372946739,
+          0.06965766102075577,
+          0.045829758048057556,
+          0.06131840497255325,
+          0.11211660504341125,
+          0.07185936719179153
+        ],
+        "gradient_l2": [
+          0.5264835357666016,
+          0.7219887971878052,
+          0.6833019256591797,
+          0.14429806172847748,
+          0.34890758991241455,
+          0.16813606023788452,
+          0.2536470890045166
+        ],
+        "gradient_x_input_abs": [
+          0.03224324807524681,
+          0.06950303912162781,
+          0.05888745188713074,
+          0.0726017951965332,
+          0.09955494105815887,
+          0.06982377916574478,
+          0.15390801429748535
+        ]
+      },
+      "ablations": [
+        {
+          "method": "attention",
+          "strategy": "top",
+          "trial": 0,
+          "positions": [
+            0,
+            5
+          ],
+          "count": 2,
+          "logit": -93.78304290771484,
+          "log_probability": -3.830899715423584,
+          "probability": 0.02169009193802666,
+          "argmax_id": 1178,
+          "logit_drop": -15.111785888671875,
+          "log_probability_drop": 2.7170835733413696,
+          "probability_drop": 0.3066136219413967,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "bottom",
+          "trial": 0,
+          "positions": [
+            1,
+            3
+          ],
+          "count": 2,
+          "logit": -119.070068359375,
+          "log_probability": -3.7902026176452637,
+          "probability": 0.022591024047269054,
+          "argmax_id": 1178,
+          "logit_drop": 10.175239562988281,
+          "log_probability_drop": 2.6763864755630493,
+          "probability_drop": 0.3057126898321543,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 0,
+          "positions": [
+            0,
+            5
+          ],
+          "count": 2,
+          "logit": -93.78304290771484,
+          "log_probability": -3.830899715423584,
+          "probability": 0.02169009193802666,
+          "argmax_id": 1178,
+          "logit_drop": -15.111785888671875,
+          "log_probability_drop": 2.7170835733413696,
+          "probability_drop": 0.3066136219413967,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 1,
+          "positions": [
+            0,
+            2
+          ],
+          "count": 2,
+          "logit": -105.36590576171875,
+          "log_probability": -2.8872792720794678,
+          "probability": 0.055727626249106765,
+          "argmax_id": 835,
+          "logit_drop": -3.5289230346679688,
+          "log_probability_drop": 1.7734631299972534,
+          "probability_drop": 0.2725760876303166,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 2,
+          "positions": [
+            3,
+            4
+          ],
+          "count": 2,
+          "logit": -119.48526763916016,
+          "log_probability": -1.5706021785736084,
+          "probability": 0.20791993971886383,
+          "argmax_id": 3348,
+          "logit_drop": 10.590438842773438,
+          "log_probability_drop": 0.45678603649139404,
+          "probability_drop": 0.12038377416055954,
+          "prediction_changed": false
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 3,
+          "positions": [
+            2,
+            3
+          ],
+          "count": 2,
+          "logit": -123.65585327148438,
+          "log_probability": -6.888790130615234,
+          "probability": 0.0010191461290914913,
+          "argmax_id": 366,
+          "logit_drop": 14.761024475097656,
+          "log_probability_drop": 5.77497398853302,
+          "probability_drop": 0.3272845677503319,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 4,
+          "positions": [
+            0,
+            3
+          ],
+          "count": 2,
+          "logit": -115.85260772705078,
+          "log_probability": -1.6621874570846558,
+          "probability": 0.1897235138154298,
+          "argmax_id": 3348,
+          "logit_drop": 6.9577789306640625,
+          "log_probability_drop": 0.5483713150024414,
+          "probability_drop": 0.13858020006399357,
+          "prediction_changed": false
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 5,
+          "positions": [
+            0,
+            2
+          ],
+          "count": 2,
+          "logit": -105.36590576171875,
+          "log_probability": -2.8872792720794678,
+          "probability": 0.055727626249106765,
+          "argmax_id": 835,
+          "logit_drop": -3.5289230346679688,
+          "log_probability_drop": 1.7734631299972534,
+          "probability_drop": 0.2725760876303166,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 6,
+          "positions": [
+            2,
+            4
+          ],
+          "count": 2,
+          "logit": -101.2326431274414,
+          "log_probability": -3.684915542602539,
+          "probability": 0.025099294454987077,
+          "argmax_id": 2008,
+          "logit_drop": -7.6621856689453125,
+          "log_probability_drop": 2.5710994005203247,
+          "probability_drop": 0.30320441942443627,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 7,
+          "positions": [
+            0,
+            2
+          ],
+          "count": 2,
+          "logit": -105.36590576171875,
+          "log_probability": -2.8872792720794678,
+          "probability": 0.055727626249106765,
+          "argmax_id": 835,
+          "logit_drop": -3.5289230346679688,
+          "log_probability_drop": 1.7734631299972534,
+          "probability_drop": 0.2725760876303166,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 8,
+          "positions": [
+            2,
+            3
+          ],
+          "count": 2,
+          "logit": -123.65585327148438,
+          "log_probability": -6.888790130615234,
+          "probability": 0.0010191461290914913,
+          "argmax_id": 366,
+          "logit_drop": 14.761024475097656,
+          "log_probability_drop": 5.77497398853302,
+          "probability_drop": 0.3272845677503319,
+          "prediction_changed": true
+        },
+        {
+          "method": "attention",
+          "strategy": "random",
+          "trial": 9,
+          "positions": [
+            1,
+            4
+          ],
+          "count": 2,
+          "logit": -119.02658081054688,
+          "log_probability": -3.2615809440612793,
+          "probability": 0.03832775605608924,
+          "argmax_id": 1492,
+          "logit_drop": 10.131752014160156,
+          "log_probability_drop": 2.147764801979065,
+          "probability_drop": 0.28997595782333413,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "top",
+          "trial": 0,
+          "positions": [
+            1,
+            2
+          ],
+          "count": 2,
+          "logit": -116.12261962890625,
+          "log_probability": -7.242230415344238,
+          "probability": 0.0007157136398514567,
+          "argmax_id": 835,
+          "logit_drop": 7.227790832519531,
+          "log_probability_drop": 6.128414273262024,
+          "probability_drop": 0.3275880002395719,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "bottom",
+          "trial": 0,
+          "positions": [
+            3,
+            5
+          ],
+          "count": 2,
+          "logit": -103.25708770751953,
+          "log_probability": -3.264286518096924,
+          "probability": 0.038224197630125356,
+          "argmax_id": 1178,
+          "logit_drop": -5.6377410888671875,
+          "log_probability_drop": 2.1504703760147095,
+          "probability_drop": 0.290079516249298,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 0,
+          "positions": [
+            0,
+            5
+          ],
+          "count": 2,
+          "logit": -93.78304290771484,
+          "log_probability": -3.830899715423584,
+          "probability": 0.02169009193802666,
+          "argmax_id": 1178,
+          "logit_drop": -15.111785888671875,
+          "log_probability_drop": 2.7170835733413696,
+          "probability_drop": 0.3066136219413967,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 1,
+          "positions": [
+            0,
+            2
+          ],
+          "count": 2,
+          "logit": -105.36590576171875,
+          "log_probability": -2.8872792720794678,
+          "probability": 0.055727626249106765,
+          "argmax_id": 835,
+          "logit_drop": -3.5289230346679688,
+          "log_probability_drop": 1.7734631299972534,
+          "probability_drop": 0.2725760876303166,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 2,
+          "positions": [
+            3,
+            4
+          ],
+          "count": 2,
+          "logit": -119.48526763916016,
+          "log_probability": -1.5706021785736084,
+          "probability": 0.20791993971886383,
+          "argmax_id": 3348,
+          "logit_drop": 10.590438842773438,
+          "log_probability_drop": 0.45678603649139404,
+          "probability_drop": 0.12038377416055954,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 3,
+          "positions": [
+            2,
+            3
+          ],
+          "count": 2,
+          "logit": -123.65585327148438,
+          "log_probability": -6.888790130615234,
+          "probability": 0.0010191461290914913,
+          "argmax_id": 366,
+          "logit_drop": 14.761024475097656,
+          "log_probability_drop": 5.77497398853302,
+          "probability_drop": 0.3272845677503319,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 4,
+          "positions": [
+            0,
+            3
+          ],
+          "count": 2,
+          "logit": -115.85260772705078,
+          "log_probability": -1.6621874570846558,
+          "probability": 0.1897235138154298,
+          "argmax_id": 3348,
+          "logit_drop": 6.9577789306640625,
+          "log_probability_drop": 0.5483713150024414,
+          "probability_drop": 0.13858020006399357,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 5,
+          "positions": [
+            0,
+            2
+          ],
+          "count": 2,
+          "logit": -105.36590576171875,
+          "log_probability": -2.8872792720794678,
+          "probability": 0.055727626249106765,
+          "argmax_id": 835,
+          "logit_drop": -3.5289230346679688,
+          "log_probability_drop": 1.7734631299972534,
+          "probability_drop": 0.2725760876303166,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 6,
+          "positions": [
+            2,
+            4
+          ],
+          "count": 2,
+          "logit": -101.2326431274414,
+          "log_probability": -3.684915542602539,
+          "probability": 0.025099294454987077,
+          "argmax_id": 2008,
+          "logit_drop": -7.6621856689453125,
+          "log_probability_drop": 2.5710994005203247,
+          "probability_drop": 0.30320441942443627,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 7,
+          "positions": [
+            0,
+            2
+          ],
+          "count": 2,
+          "logit": -105.36590576171875,
+          "log_probability": -2.8872792720794678,
+          "probability": 0.055727626249106765,
+          "argmax_id": 835,
+          "logit_drop": -3.5289230346679688,
+          "log_probability_drop": 1.7734631299972534,
+          "probability_drop": 0.2725760876303166,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 8,
+          "positions": [
+            2,
+            3
+          ],
+          "count": 2,
+          "logit": -123.65585327148438,
+          "log_probability": -6.888790130615234,
+          "probability": 0.0010191461290914913,
+          "argmax_id": 366,
+          "logit_drop": 14.761024475097656,
+          "log_probability_drop": 5.77497398853302,
+          "probability_drop": 0.3272845677503319,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_l2",
+          "strategy": "random",
+          "trial": 9,
+          "positions": [
+            1,
+            4
+          ],
+          "count": 2,
+          "logit": -119.02658081054688,
+          "log_probability": -3.2615809440612793,
+          "probability": 0.03832775605608924,
+          "argmax_id": 1492,
+          "logit_drop": 10.131752014160156,
+          "log_probability_drop": 2.147764801979065,
+          "probability_drop": 0.28997595782333413,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "top",
+          "trial": 0,
+          "positions": [
+            4,
+            6
+          ],
+          "count": 2,
+          "logit": -120.82608032226562,
+          "log_probability": -6.843724250793457,
+          "probability": 0.001066125478190799,
+          "argmax_id": 262,
+          "logit_drop": 11.931251525878906,
+          "log_probability_drop": 5.729908108711243,
+          "probability_drop": 0.32723758840123257,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "bottom",
+          "trial": 0,
+          "positions": [
+            0,
+            2
+          ],
+          "count": 2,
+          "logit": -105.36590576171875,
+          "log_probability": -2.8872792720794678,
+          "probability": 0.055727626249106765,
+          "argmax_id": 835,
+          "logit_drop": -3.5289230346679688,
+          "log_probability_drop": 1.7734631299972534,
+          "probability_drop": 0.2725760876303166,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 0,
+          "positions": [
+            0,
+            5
+          ],
+          "count": 2,
+          "logit": -93.78304290771484,
+          "log_probability": -3.830899715423584,
+          "probability": 0.02169009193802666,
+          "argmax_id": 1178,
+          "logit_drop": -15.111785888671875,
+          "log_probability_drop": 2.7170835733413696,
+          "probability_drop": 0.3066136219413967,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 1,
+          "positions": [
+            0,
+            2
+          ],
+          "count": 2,
+          "logit": -105.36590576171875,
+          "log_probability": -2.8872792720794678,
+          "probability": 0.055727626249106765,
+          "argmax_id": 835,
+          "logit_drop": -3.5289230346679688,
+          "log_probability_drop": 1.7734631299972534,
+          "probability_drop": 0.2725760876303166,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 2,
+          "positions": [
+            3,
+            4
+          ],
+          "count": 2,
+          "logit": -119.48526763916016,
+          "log_probability": -1.5706021785736084,
+          "probability": 0.20791993971886383,
+          "argmax_id": 3348,
+          "logit_drop": 10.590438842773438,
+          "log_probability_drop": 0.45678603649139404,
+          "probability_drop": 0.12038377416055954,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 3,
+          "positions": [
+            2,
+            3
+          ],
+          "count": 2,
+          "logit": -123.65585327148438,
+          "log_probability": -6.888790130615234,
+          "probability": 0.0010191461290914913,
+          "argmax_id": 366,
+          "logit_drop": 14.761024475097656,
+          "log_probability_drop": 5.77497398853302,
+          "probability_drop": 0.3272845677503319,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 4,
+          "positions": [
+            0,
+            3
+          ],
+          "count": 2,
+          "logit": -115.85260772705078,
+          "log_probability": -1.6621874570846558,
+          "probability": 0.1897235138154298,
+          "argmax_id": 3348,
+          "logit_drop": 6.9577789306640625,
+          "log_probability_drop": 0.5483713150024414,
+          "probability_drop": 0.13858020006399357,
+          "prediction_changed": false
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 5,
+          "positions": [
+            0,
+            2
+          ],
+          "count": 2,
+          "logit": -105.36590576171875,
+          "log_probability": -2.8872792720794678,
+          "probability": 0.055727626249106765,
+          "argmax_id": 835,
+          "logit_drop": -3.5289230346679688,
+          "log_probability_drop": 1.7734631299972534,
+          "probability_drop": 0.2725760876303166,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 6,
+          "positions": [
+            2,
+            4
+          ],
+          "count": 2,
+          "logit": -101.2326431274414,
+          "log_probability": -3.684915542602539,
+          "probability": 0.025099294454987077,
+          "argmax_id": 2008,
+          "logit_drop": -7.6621856689453125,
+          "log_probability_drop": 2.5710994005203247,
+          "probability_drop": 0.30320441942443627,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 7,
+          "positions": [
+            0,
+            2
+          ],
+          "count": 2,
+          "logit": -105.36590576171875,
+          "log_probability": -2.8872792720794678,
+          "probability": 0.055727626249106765,
+          "argmax_id": 835,
+          "logit_drop": -3.5289230346679688,
+          "log_probability_drop": 1.7734631299972534,
+          "probability_drop": 0.2725760876303166,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 8,
+          "positions": [
+            2,
+            3
+          ],
+          "count": 2,
+          "logit": -123.65585327148438,
+          "log_probability": -6.888790130615234,
+          "probability": 0.0010191461290914913,
+          "argmax_id": 366,
+          "logit_drop": 14.761024475097656,
+          "log_probability_drop": 5.77497398853302,
+          "probability_drop": 0.3272845677503319,
+          "prediction_changed": true
+        },
+        {
+          "method": "gradient_x_input_abs",
+          "strategy": "random",
+          "trial": 9,
+          "positions": [
+            1,
+            4
+          ],
+          "count": 2,
+          "logit": -119.02658081054688,
+          "log_probability": -3.2615809440612793,
+          "probability": 0.03832775605608924,
+          "argmax_id": 1492,
+          "logit_drop": 10.131752014160156,
+          "log_probability_drop": 2.147764801979065,
+          "probability_drop": 0.28997595782333413,
+          "prediction_changed": true
+        }
+      ],
+      "timings": {
+        "forward_attention_seconds": 0.02623216703068465,
+        "gradient_seconds": 0.027068124967627227,
+        "ablation_seconds": 0.6413256250089034
+      }
+    }
+  ],
+  "summary": [
+    {
+      "method": "attention",
+      "strategy": "top",
+      "mean_log_probability_drop": 2.03021506468455,
+      "std_across_prompts": 1.3733335349157834,
+      "prompt_count": 3
+    },
+    {
+      "method": "attention",
+      "strategy": "bottom",
+      "mean_log_probability_drop": 2.070293108622233,
+      "std_across_prompts": 2.3274681645350745,
+      "prompt_count": 3
+    },
+    {
+      "method": "attention",
+      "strategy": "random",
+      "mean_log_probability_drop": 2.2626363754272463,
+      "std_across_prompts": 2.3598271237987816,
+      "prompt_count": 3
+    },
+    {
+      "method": "gradient_l2",
+      "strategy": "top",
+      "mean_log_probability_drop": 4.818872253100078,
+      "std_across_prompts": 4.513779992504304,
+      "prompt_count": 3
+    },
+    {
+      "method": "gradient_l2",
+      "strategy": "bottom",
+      "mean_log_probability_drop": 1.69614843527476,
+      "std_across_prompts": 2.5458198614073098,
+      "prompt_count": 3
+    },
+    {
+      "method": "gradient_l2",
+      "strategy": "random",
+      "mean_log_probability_drop": 2.2626363754272463,
+      "std_across_prompts": 2.3598271237987816,
+      "prompt_count": 3
+    },
+    {
+      "method": "gradient_x_input_abs",
+      "strategy": "top",
+      "mean_log_probability_drop": 4.58757750193278,
+      "std_across_prompts": 4.623747252678675,
+      "prompt_count": 3
+    },
+    {
+      "method": "gradient_x_input_abs",
+      "strategy": "bottom",
+      "mean_log_probability_drop": 1.587324579556783,
+      "std_across_prompts": 2.5456090709320955,
+      "prompt_count": 3
+    },
+    {
+      "method": "gradient_x_input_abs",
+      "strategy": "random",
+      "mean_log_probability_drop": 2.2626363754272463,
+      "std_across_prompts": 2.3598271237987816,
+      "prompt_count": 3
+    }
+  ]
+}

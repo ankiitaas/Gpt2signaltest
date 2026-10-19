@@ -1,0 +1,11 @@
+{
+  "version": "0.2.0",
+  "configurations": [{
+    "name": "GPT-2 baseline",
+    "type": "debugpy",
+    "request": "launch",
+    "program": "${workspaceFolder}/baseline.py",
+    "cwd": "${workspaceFolder}",
+    "console": "integratedTerminal"
+  }]
+}
