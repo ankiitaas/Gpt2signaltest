@@ -1,6 +1,6 @@
-# DocSumXAI
+#decoderonlyllm signal test
 
-Capstone baseline: which internal signals explain a decoder-only model's next-token prediction, and at what extraction cost?
+baseline: which internal signals explain a decoder-only model's next-token prediction, and at what extraction cost?
 
 ## Setup and run
 
